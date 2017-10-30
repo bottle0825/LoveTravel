@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/quoteCss/swiper.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/tool.css"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/quoteCss/video-js.css"/>
 		<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 	</head>
 	<body>
@@ -47,6 +48,8 @@
 				<input type="text" name="searchText" id="search" value="" placeholder="请输入要查询的内容"/>
 				<button><span class="fa fa-search"></span></button>
 			</div>
+			<div class="audioToggle">点击关闭背景音乐</div>
+			<audio src="media/纯歌词.mp3" autoplay=""></audio>
 		</nav>
 		<div class="main">
 			<div class="content">
@@ -203,7 +206,7 @@
 				</section>
 				<section>
 					<h3>热门视频<a href="#">更多》</a></h3>
-					<video width="100%" height="" controls="">
+					<video width="250px" height="" class="video-js vjs-big-play-centered vjs-default-skin" controls data-setup = "{}" preload='auto'>
 						<source src="media/movie.mp4" type="video/mp4"></source>
 						<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
 							<param name="movie" value="myvideo.swf" />
@@ -302,15 +305,27 @@
 						<li></li>
 						<li></li>
 					</ul>
+					<img src="images/weixin.png"/>
 				</section>
 			</aside>
 		</div>
 		<footer>
 			<span>版权所有©爱旅行</span>
 		</footer>
+		<div class="flo">
+			<div id="up">
+				<span class="fa fa-angle-up"></span>
+				<p>返还顶部</p>
+			</div>
+			<div id="propose">
+				<span class="fa fa-comment-o"></span>
+				<p>意见反馈</p>
+			</div>
+		</div>
 		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/video.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/videojs-ie8.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 				var swiper = new Swiper('.swiper-container', {
 					loop:true,
@@ -332,7 +347,33 @@
 				        nextEl: '.swiper-button-next',
 				        prevEl: '.swiper-button-prev',
 				    },
-		   		 });
+		   		});
+		   		//背景音乐开关
+		   		var audioFlag = true;
+		   		$('.audioToggle').on('click',function(){
+		   			if(!audioFlag){
+		   				$('audio')[0].play();
+		   				$(this).html('点击关闭背景音乐');
+		   				audioFlag=true;
+		   			}else{
+		   				$('audio')[0].pause();
+		   				$(this).html('点击开启背景音乐');
+		   				audioFlag=false;
+		   			}
+		   		});
+		   		//返还顶部
+		   		$('#up').on('click',function(){
+		   			var Y = window.scrollY;
+		   			var timer = setInterval(function(){
+		   				Y-=50;
+		   				window.scrollTo(0,Y);
+		   				if(Y<=0){
+		   					window.scrollTo(0,0);
+		   					clearInterval(timer);
+		   				}
+		   			},1);
+		   			
+		   		});
 		</script>
 	</body>
 </html>
