@@ -99,4 +99,5 @@ nav button{
 footer{
 	line-height: 100px;
 	text-align: center;
+	border-top: 1px solid #999;
 }

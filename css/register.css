@@ -1,0 +1,107 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	/*font-size: 0;*/
+}
+body{
+	background: url(../images/wallpaper.jpg);
+	perspective: 1000px;
+}
+.clearfix:after{
+	display:block;
+	content:"";
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix{
+	zoom: 1;
+}
+.main{
+	width: 1000px;
+	height: 300px;
+	margin: 150px auto;
+	padding: 30px;
+	display: flex;
+	box-shadow: 1px 1px 10px #333;
+	background: #fafafa;
+}
+.main h2{
+	display: block;
+	width: 100px;
+	border-bottom: 5px solid limegreen;
+}
+.left{
+	width: 454px;
+	border-right: 1px solid #999;
+}
+.left div{
+	margin:20px;
+	font-size: 18px;
+}
+.left input{
+	height: 30px;
+	width: 250px;
+}
+.left input[type='submit']{
+	height: 35px;
+	width: 115px;
+	margin-left: 100px;
+	border: none;
+	color: #fff;
+	background: url(../images/icon_3.png) 0 -90px;
+}
+.left input[type='submit']:hover{
+	background: url(../images/icon_3.png) -115px -90px;
+}
+.right{
+	width: 450px;
+	margin-left: 30px;
+}
+.right div{
+	display: flex;
+	flex-flow: row wrap;
+}
+.right button{
+	margin: 20px;
+}
+.right button:nth-child(2n+1){
+	height: 40px;
+	width: 140px;
+	border: none;
+	color: #fff;
+	background: url(../images/head.png) -303px -122px;
+}
+.right button:nth-child(2n){
+	height: 40px;
+	width: 173px;
+	border: none;
+	color: #fff;
+	background: url(../images/head.png) -462px -122px;
+}
+.right button:nth-child(3){
+	background: url(../images/head.png) -303px -179px;
+}
+.right button:nth-child(4){
+	background: url(../images/head.png) -462px -179px;
+}
+.right button:nth-child(5){
+	background: url(../images/head.png) -303px -236px;
+}
+.right button:nth-child(1):hover{
+	background: url(../images/head.png) -703px -122px;
+}
+.right button:nth-child(2):hover{
+	background: url(../images/head.png) -862px -122px;
+}
+.right button:nth-child(3):hover{
+	background: url(../images/head.png) -703px -179px;
+}
+.right button:nth-child(4):hover{
+	background: url(../images/head.png) -862px -179px;
+}
+.right button:nth-child(5):hover{
+	background: url(../images/head.png) -703px -236px;
+}
