@@ -254,3 +254,28 @@ aside section:nth-child(7) img{
 .flo div span{
 	font-size: 40px;
 }
+#chat{
+	position: fixed;
+	box-sizing: border-box;
+	padding: 10px;
+	width: 300px;
+	height: 300px;
+	border: #666 solid 1px;
+	box-shadow: 1px 1px 10px #999;
+	background: #efefef;
+	right: 100px;
+	bottom: -300px;
+	transition: bottom .5s linear;
+	z-index: 999;
+}
+#chat textarea{
+	width: 280px;
+	height: 250px;
+	border-radius: 5px;
+}
+#chat button{
+	float: right;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+}

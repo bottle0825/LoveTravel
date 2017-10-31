@@ -324,10 +324,16 @@
 				<p>意见反馈</p>
 			</div>
 		</div>
+		<div id="chat">
+			<textarea name="" rows="10" cols="" placeholder="请输入您对该网站的建议"></textarea>
+			<button>提交</button>
+			<button>关闭</button>
+		</div>
 		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/video.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/videojs-ie8.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			function callback(data){
 	    		$('#searchShow').html('');
@@ -422,6 +428,30 @@
 	    			window.location="http://www.baidu.com/s?wd="+$('#search').val();
 	    		});
 	    	})
+	   		//意见反馈
+	   		$('#propose').click(function(){
+	   			$('#chat').css({
+	   				bottom:0
+	   			});
+	   		});
+	   		$('#chat').find('button').eq(0).click(function(){
+	   			if(!$('#chat').find('textarea').val()==''){
+	   				setCookie('propose',$('#chat').find('textarea').val(),3);
+	   				alert('感谢您的建议！');
+		   			$('#chat').find('textarea').val('');
+		   			$('#chat').css({
+		   				bottom:'-300px'
+		   			});
+	   			}else{
+	   				alert('请输入您的建议');
+	   			}
+	   		});
+	   		$('#chat').find('button').eq(1).click(function(){
+	   			$('#chat').find('textarea').val('');
+	   			$('#chat').css({
+	   				bottom:'-300px'
+	   			});
+	   		});
 		</script>
 	</body>
 </html>
