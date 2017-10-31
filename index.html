@@ -46,10 +46,12 @@
 			<a href="#">小组</a>
 			<div class="search">
 				<input type="text" name="searchText" id="search" value="" placeholder="请输入要查询的内容"/>
-				<button><span class="fa fa-search"></span></button>
+				<button id="searchBtn"><span class="fa fa-search"></span></button>
+				<ul id="searchShow">
+				</ul>
 			</div>
 			<div class="audioToggle">点击关闭背景音乐</div>
-			<audio src="media/纯歌词.mp3" autoplay=""></audio>
+			<audio src="media/纯歌词.mp3" ></audio>
 		</nav>
 		<div class="main">
 			<div class="content">
@@ -303,9 +305,9 @@
 						<li></li>
 						<li></li>
 						<li></li>
-						<li></li>
+						<li id="Sao"></li>
 					</ul>
-					<img src="images/weixin.png"/>
+					<img src="images/weixin.png" id="erwei"/>
 				</section>
 			</aside>
 		</div>
@@ -322,58 +324,104 @@
 				<p>意见反馈</p>
 			</div>
 		</div>
-		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/video.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/videojs-ie8.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-				var swiper = new Swiper('.swiper-container', {
-					loop:true,
-				    spaceBetween: 30,
-				    centeredSlides: true,
-				    autoplay: {
-				        delay: 2500,
-				        disableOnInteraction: false,
-				    },
-				    pagination: {
-				        el: '.swiper-pagination',
-				        clickable: true,
-				        hideOnClick:true,
-				        renderBullet: function (index, className) {
-					     	return '<img class="'+className+'" src="images/upload/pic'+(index+1)+'.jpg">';
-					 	}
-				    },
-				    navigation: {
-				        nextEl: '.swiper-button-next',
-				        prevEl: '.swiper-button-prev',
-				    },
-		   		});
-		   		//背景音乐开关
-		   		var audioFlag = true;
-		   		$('.audioToggle').on('click',function(){
-		   			if(!audioFlag){
-		   				$('audio')[0].play();
-		   				$(this).html('点击关闭背景音乐');
-		   				audioFlag=true;
-		   			}else{
-		   				$('audio')[0].pause();
-		   				$(this).html('点击开启背景音乐');
-		   				audioFlag=false;
-		   			}
-		   		});
-		   		//返还顶部
-		   		$('#up').on('click',function(){
-		   			var Y = window.scrollY;
-		   			var timer = setInterval(function(){
-		   				Y-=50;
-		   				window.scrollTo(0,Y);
-		   				if(Y<=0){
-		   					window.scrollTo(0,0);
-		   					clearInterval(timer);
-		   				}
-		   			},1);
-		   			
-		   		});
+			function callback(data){
+	    		$('#searchShow').html('');
+	    		var str = '';
+	    		if(data.s.length){
+	    			for(var i=0;i<(data.s.length>5?5:data.s.length);i++){
+	    				str +='<li><a href="http://www.baidu.com/s?wd='+data.s[i]+'">'+data.s[i]+'</a></li>';
+	    			};
+	    			$('#searchShow').html(str).slideDown();
+	    				console.log($('#searchShow'));
+	    		}else{
+	    			$('#searchShow').hide();
+	    		}
+	    	}
+		</script>
+		<script type="text/javascript">
+			//轮播图
+			var swiper = new Swiper('.swiper-container', {
+				loop:true,
+			    spaceBetween: 30,
+			    centeredSlides: true,
+			    autoplay: {
+			        delay: 2500,
+			        disableOnInteraction: false,
+			    },
+			    pagination: {
+			        el: '.swiper-pagination',
+			        clickable: true,
+			        hideOnClick:true,
+			        renderBullet: function (index, className) {
+				     	return '<img class="'+className+'" src="images/upload/pic'+(index+1)+'.jpg">';
+				 	}
+			    },
+			    navigation: {
+			        nextEl: '.swiper-button-next',
+			        prevEl: '.swiper-button-prev',
+			    },
+	   		});
+	   		//背景音乐开关
+	   		var audioFlag = true;
+	   		$('.audioToggle').on('click',function(){
+	   			if(!audioFlag){
+	   				$('audio')[0].play();
+	   				$(this).html('点击关闭背景音乐');
+	   				audioFlag=true;
+	   			}else{
+	   				$('audio')[0].pause();
+	   				$(this).html('点击开启背景音乐');
+	   				audioFlag=false;
+	   			}
+	   		});
+	   		//返还顶部
+	   		$('#up').on('click',function(){
+	   			var Y = window.scrollY;
+	   			var timer = setInterval(function(){
+	   				Y-=50;
+	   				window.scrollTo(0,Y);
+	   				if(Y<=0){
+	   					window.scrollTo(0,0);
+	   					clearInterval(timer);
+	   				}
+	   			},1);
+	   			
+	   		});
+	   		//开启关闭二维码
+	   		$('#Sao').on('mouseenter',function(){
+	   			$('#erwei').css({
+	   				left:'40px'
+	   			});
+	   		});
+	   		$('#erwei').on('mouseleave',function(){
+	   			$('#erwei').css({
+	   				left:'-200px'
+	   			});
+	   		});
+	   		//模拟百度搜索
+	   		$(function(){
+	    		$('#search').on('keyup',function(){
+	    			if($(this).val()!=''){
+	    				var $Script = $('<script><\/script>');
+	    				var Url = 'http://suggestion.baidu.com/su?wd='+ $(this).val() +'&cb=callback';
+	    				$Script.attr('src',Url);
+	    				$(document).append($Script);
+	    			}else{
+	    				$('#searchShow').hide();
+	    			}
+	    		});
+//	    		$('#search').blur(function(){
+//  				$('#searchShow').hide();
+//	    		});
+	    		$('#searchBtn').click(function(){
+	    			window.location="http://www.baidu.com/s?wd="+$('#search').val();
+	    		});
+	    	})
 		</script>
 	</body>
 </html>

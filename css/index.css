@@ -170,6 +170,10 @@ aside section:nth-child(6) ul li{
 aside section:nth-child(6) ul li div:nth-child(2){
 	margin: 10px;
 }
+aside section:nth-child(7){
+	position: relative;
+	overflow: hidden;
+}
 aside section:nth-child(7) ul{
 	display: flex;
 	font-size: 0;
@@ -217,8 +221,15 @@ aside section:nth-child(7) ul li:nth-child(5):hover{
 aside section:nth-child(7) ul li:nth-child(6):hover{
 	background: url(../images/sites.png) -111px -140px;
 }
+aside section:nth-child(7) ul li:nth-child(6):hover{
+	background: url(../images/sites.png) -111px -140px;
+}
 aside section:nth-child(7) img{
-	display: none;
+	position: absolute;
+	width: 200px;
+	left: -200px;
+	top: 40px;
+	transition: left 0.3s linear;
 }
 
 .flo{
