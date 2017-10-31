@@ -18,18 +18,20 @@
 			</div>
 			<div>
 				<h2>用户登录</h2>
-				<form action="" method="post">
+				<div class="form">
 					<input type="text" name="username" id="username" value="" placeholder="微博账号/QQ号码/电子邮箱"/>
+					<i id="msg1">请输入账号</i>
 					<input type="password" name="pwd" id="pwd" value="" placeholder="密码"/>
-					<button>登录</button>
+					<i id="msg2">密码错误或账号不存在</i>
+					<button id="login">登录</button>
 					<input type="checkbox" name="rem" id="rem" value="" />
 					<span>下次自动登录</span>
 					<input type="button"/>
 					<input type="button"/>
-				</form>
+				</div>
 				<h6>
 					<a href="#">忘记密码</a> | 
-					<a href="#">注册新账号</a> | 
+					<a href="register.html">注册新账号</a> | 
 					<a href="#">意见反馈</a>
 				</h6>
 			</div>
@@ -37,5 +39,49 @@
 		<footer>
 			<span>版权所有©爱旅行</span>
 		</footer>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('#login').click(function(){
+				var $username = $('#username').val();
+				var $pwd = $('#pwd').val();
+				if(username){
+					$('#msg1').css({
+						display:'none'
+					})
+					$.ajax({
+						type:"post",
+						url:"js/ajax.php",
+						async:true,
+						dataType:'text',
+						data:{
+							username:$username,
+							pwd:$pwd
+						},
+						success:function(response,status,xhr){
+							console.log(response);
+							if(response){
+								setCookie('username',$username,1);
+								window.location = 'index.html';
+							}else{
+								$('#msg2').css({
+									display:'block'
+								})
+							}
+						},
+						error:function(xhr,errorText,errorstatus){
+							$('#msg').html(errorText);
+						},
+					});
+				}else{
+					$('#msg1').css({
+						display:'block'
+					})
+					$('#msg2').css({
+						display:'none'
+					})
+				}
+			});
+		</script>
 	</body>
 </html>

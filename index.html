@@ -350,6 +350,11 @@
 	    	}
 		</script>
 		<script type="text/javascript">
+	   		//检测自动登录
+	   		console.log(getCookie('username'));
+   			if(getCookie('username')){
+   				$('#username').text(getCookie('username'));
+   			}
 			//轮播图
 			var swiper = new Swiper('.swiper-container', {
 				loop:true,
@@ -451,12 +456,6 @@
 	   			$('#chat').css({
 	   				bottom:'-300px'
 	   			});
-	   		});
-	   		//检测自动登录
-	   		$(function(){
-	   			if(getCookie('username')){
-	   				$('#username').text(getCookie('username'));
-	   			}
 	   		});
 		</script>
 	</body>

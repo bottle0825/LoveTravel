@@ -57,7 +57,7 @@ body{
 	width: 360px;
 	height: 170px;
 }
-.main div:nth-child(2){
+.main>div:nth-child(2){
 	display: inline-block;
 	width: 400px;
 	height: 400px;
@@ -70,48 +70,55 @@ body{
 	padding-bottom: 5px;
 	border-bottom: 1px solid #999;
 }
-.main div:nth-child(2) form{
+.main div:nth-child(2) i{
+	display: none;
+	color: red;
+	font-size: 8px;
+}
+.main div:nth-child(2) .form{
 	padding: 10px;
 }
-.main div:nth-child(2) form input{
+.main div:nth-child(2) .form input{
 	height: 30px;
 	width: 300px;
 	margin-top: 20px;
-	cursor: pointer;
 }
-.main div:nth-child(2) form button:nth-child(3){
+.main div:nth-child(2) .form button:nth-child(5){
 	height: 35px;
 	width: 115px;
 	margin: 10px;
 	border: none;
 	color: #fff;
 	background: url(../images/icon_3.png) 0 -90px;
+	cursor: pointer;
 }
-.main div:nth-child(2) form button:nth-child(3):hover{
+.main div:nth-child(2) .form button:nth-child(5):hover{
 	background: url(../images/icon_3.png) -115px -90px;
 }
-.main div:nth-child(2) form input:nth-child(4){
+.main div:nth-child(2) .form input:nth-child(6){
 	width: 10px;
 	height: 10px;
 }
-.main div:nth-child(2) form input:nth-child(6){
+.main div:nth-child(2) .form input:nth-child(8){
 	height: 40px;
 	width: 140px;
 	border: none;
 	color: #fff;
 	background: url(../images/head.png) -303px -122px;
+	cursor: pointer;
 }
-.main div:nth-child(2) form input:nth-child(6):hover{
+.main div:nth-child(2) .form input:nth-child(8):hover{
 	background: url(../images/head.png) -703px -122px;
 }
-.main div:nth-child(2) form input:nth-child(7){
+.main div:nth-child(2) .form input:nth-child(9){
 	height: 40px;
 	width: 173px;
 	border: none;
 	color: #fff;
 	background: url(../images/head.png) -462px -122px;
+	cursor: pointer;
 }
-.main div:nth-child(2) form input:nth-child(7):hover{
+.main div:nth-child(2) .form input:nth-child(9):hover{
 	background: url(../images/head.png) -862px -122px;
 }
 .main div:nth-child(2) h6{
