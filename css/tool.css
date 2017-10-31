@@ -155,3 +155,50 @@ footer{
 	text-align: center;
 	border-top: 1px solid #999;
 }
+.flo{
+	width: 80px;
+	height: 162px;
+	position: fixed !important;
+	right: 0;
+	bottom: 100px;
+}
+.flo div{
+	width: 80px;
+	height: 80px;
+	margin-top: 2px;
+	background: #999;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+.flo div:hover{
+	background: cornflowerblue;
+}
+.flo div span{
+	font-size: 40px;
+}
+#chat{
+	position: fixed;
+	box-sizing: border-box;
+	padding: 10px;
+	width: 300px;
+	height: 300px;
+	border: #666 solid 1px;
+	box-shadow: 1px 1px 10px #999;
+	background: #efefef;
+	right: 100px;
+	bottom: -300px;
+	transition: bottom .5s linear;
+	z-index: 999;
+}
+#chat textarea{
+	width: 280px;
+	height: 250px;
+	border-radius: 5px;
+}
+#chat button{
+	float: right;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+}
