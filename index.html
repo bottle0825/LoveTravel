@@ -355,6 +355,15 @@
    			if(getCookie('username')){
    				$('#username').text(getCookie('username'));
    			}
+   			//导航栏固定
+			$(window).scroll(function(){
+				console.log($('header').height());
+				if(scrollY>$('header').height()){
+					$('nav').addClass('fix');
+				}else{
+					$('nav').removeClass('fix');
+				}
+			})
 			//轮播图
 			var swiper = new Swiper('.swiper-container', {
 				loop:true,
@@ -438,6 +447,9 @@
 	   			$('#chat').css({
 	   				bottom:0
 	   			});
+	   			$(this).css({
+	   				backgroundColor:'cornflowerblue'
+	   			})
 	   		});
 	   		$('#chat').find('button').eq(0).click(function(){
 	   			if(!$('#chat').find('textarea').val()==''){
@@ -447,6 +459,9 @@
 		   			$('#chat').css({
 		   				bottom:'-300px'
 		   			});
+		   			$('#propose').css({
+		   				backgroundColor:'#999'
+		   			})
 	   			}else{
 	   				alert('请输入您的建议');
 	   			}
@@ -456,6 +471,9 @@
 	   			$('#chat').css({
 	   				bottom:'-300px'
 	   			});
+	   			$('#propose').css({
+	   				backgroundColor:'#999'
+	   			})
 	   		});
 		</script>
 	</body>

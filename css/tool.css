@@ -51,6 +51,13 @@ nav{
 	padding: 5px 15%;
 	border-bottom: 1px #999 solid;
 	box-sizing: border-box;
+	background: url(../images/bg.jpg);
+	z-index: 990;
+}
+.fix{
+	position: fixed;
+	left: 0;
+	top: 0;
 }
 nav .logo{
 	display: inline-block;
