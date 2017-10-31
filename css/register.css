@@ -45,7 +45,7 @@ body{
 	height: 30px;
 	width: 250px;
 }
-.left input[type='submit']{
+.left input[type='button']{
 	height: 35px;
 	width: 115px;
 	margin-left: 100px;
@@ -53,8 +53,14 @@ body{
 	color: #fff;
 	background: url(../images/icon_3.png) 0 -90px;
 }
-.left input[type='submit']:hover{
+.left input[type='button']:hover{
 	background: url(../images/icon_3.png) -115px -90px;
+}
+.left i{
+	display: none;
+	color: red;
+	font-size: 8px;
+	margin-left: 100px;
 }
 .right{
 	width: 450px;

@@ -9,20 +9,23 @@
 		<div class="main">
 			<div class="left">
 				<h2>直接注册</h2>
-				<form action="" method="post">
+				<form>
 					<div>
 						<span>邮箱地址：</span>
 						<input type="text" name="mail" id="mail" value="" />
+						<i id="msg1">请输入正确的邮箱地址</i>
 					</div>
 					<div>
 						<span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
-						<input type="text" name="mail" id="mail" value="" />
+						<input type="password" name="pwd" id="pwd" value="" />
+						<i id="msg3">密码不能为空</i>
 					</div>
 					<div>
 						<span>确认密码：</span>
-						<input type="text" name="mail" id="mail" value="" />
+						<input type="password" name="repwd" id="repwd" value="" />
+						<i id="msg2">两次密码输入不一致</i>
 					</div>
-					<input type="submit" value="注册"/>
+					<input type="button" value="注册"/>
 				</form>
 			</div>
 			<div class="right">
@@ -36,5 +39,45 @@
 				</div>
 			</div>
 		</div>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var regmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/
+			$('input[type=button]').click(function(){
+				if(regmail.test($('input[name=mail]').val())){
+					$('#msg1').css({
+						display:'none'
+					});
+					if($('input[name=pwd]').val()){
+						$('#msg3').css({
+							display:'none'
+						});
+						if($('input[name=pwd]').val()==$('input[name=repwd]').val()){
+							setCookie('username',$('input[name=mail]').val(),1);
+							window.location = 'index.html';
+						}else{
+							$('#msg2').css({
+								display:'block'
+							});
+						}
+					}else{
+						$('#msg3').css({
+							display:'block'
+						});
+					}
+				}else{
+					$('#msg1').css({
+						display:'block'
+					});
+					$('#msg2').css({
+						display:'none'
+					});
+					$('#msg3').css({
+						display:'none'
+					});
+				}
+			});
+			
+		</script>
 	</body>
 </html>
