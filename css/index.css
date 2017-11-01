@@ -93,6 +93,9 @@
 .content section ul li:hover img{
 	width: 300px;
 }
+li{
+	cursor: pointer;
+}
 
 
 aside{

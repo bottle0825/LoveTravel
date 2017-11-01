@@ -150,6 +150,8 @@ nav button{
 	padding: 5px 15%;
 }
 footer{
+	display: block;
+	width: 100%;
 	box-sizing: border-box;
 	line-height: 100px;
 	text-align: center;

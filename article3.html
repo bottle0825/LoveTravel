@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/article1.css" class="css">
+    <link rel="stylesheet" type="text/css" href="css/tool.css"/>
+	<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+    <style>
+        .banner{
+            background:url(images/upload/banner2.png) center center no-repeat;
+            background-size:cover;
+            height:160px;
+        }
+        .body{
+            /*border:1px solid #000;*/
+        }
+        .main{
+            /*border:1px solid red;*/
+        }
+        .slider{
+            /*border:1px solid blue;*/
+        }
+        .main .topone{
+            width:100%;
+            /*border:1px solid yellow;*/
+        }
+        .main .topone ul.topsul{
+            box-sizing: border-box;
+            padding:6px;
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /*border: 1px solid purple;*/
+            /*height: 100px;*/
+        }
+        .main .topone ul.topsul li{
+            text-align: center;
+            width:32.5%;
+        }
+        .main .topone ul.topsul li a img{
+            width:100%;
+        }
+        .main .topone ul.topsul li p{
+            color:#999;
+        }
+        .slider .thirds{
+            margin-top:0;
+        }
+
+
+        /*最新发布*/
+        .main .toptwo{
+            margin-top:20px;
+            width:100%;
+            /*border:1px solid yellow;*/
+
+        }
+        .main .toptwo ul{
+            width:100%;
+            box-sizing: border-box;
+            padding:0 10px 10px 10px;
+        }
+        .main .toptwo ul li{
+            line-height:180px;
+            height:180px;
+            box-sizing: border-box;
+            padding:8px;
+            /*border-bottom: 1px dotted #000;*/
+            display: flex;
+            justify-content: flex-start;
+
+        }
+        .main .toptwo ul li img{
+            height:100%;
+        }
+        .main .toptwo ul li .info{
+            line-height: 30px;
+            /*border:1px solid #000;*/
+            margin-left:30px;
+            width:70%;
+            text-align: left;
+        }
+        .main .toptwo ul li .info p.p1{
+            color:#999;
+        }
+        .main ul.pages{
+            margin:10px 0;
+            display: flex;
+            width:100%;
+            justify-content: flex-start;
+        }
+        .main ul.pages li{
+            margin-right:18px;
+        }
+
+        /*搜索*/
+        .input i{
+            border: 1px solid #000;
+            height:24px;
+            width:24px;
+            text-align: center;
+            line-height: 26px;
+            cursor: pointer;
+        }
+        .input i:hover{
+            background: #000;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="clearfix">
+		<div class="left">
+			<a href="#">客户端</a>
+			<span>|</span>
+			<a href="#">手机版</a>
+			<span>|</span>
+			<a href="#">收集工具</a>
+		</div> 
+		<div class="right">
+			<a href="register.html">注册&nbsp;</a>
+			<a href="login.html">登录&nbsp;</a>
+			<a href="#" class="fa fa-envelope" aria-hidden="true">&nbsp;</a>
+			<a href="#" class="fa fa-volume-up" aria-hidden="true">&nbsp;</a>
+			<img src="images/upload/photos/admin.jpg"/>
+			<span id="username">请登录！</span>
+		</div>
+	</header>
+	<nav>
+		<a href="index.html" class="logo"></a>
+		<a href="article3.html">广播</a>
+		<span>|</span>
+		<a href="article3.html">发现</a>
+		<a href="article3.html">文章</a>
+		<a href="article3.html">心情</a>
+		<span>|</span>
+		<a href="article3.html">专辑</a>
+		<a href="article3.html">生活</a>
+		<a href="article3.html">时尚</a>
+		<a href="article3.html">兴趣</a>
+		<span>|</span>
+		<a href="article3.html">Wiki</a>
+		<span>|</span>
+		<a href="#">小组</a>
+		<div class="search">
+			<input type="text" name="searchText" id="search" value="" placeholder="请输入要查询的内容"/>
+			<button id="searchBtn"><span class="fa fa-search"></span></button>
+			<ul id="searchShow">
+			</ul>
+		</div>
+		<div class="audioToggle">点击关闭背景音乐</div>
+		<audio src="media/纯歌词.mp3" ></audio>
+	</nav>
+    <div class="body banner banner2">
+
+</div>
+    <!--主体-->
+    <div class="main clearfix">
+        <!--左翼-->
+        <div class="left">
+            <div class="topone">
+                <div class="title">
+                    <h3>编辑推荐</h3>
+                </div>
+                <ul class="topsul">
+                    <li>
+                        <a href="#"><img src="images/upload/best1.jpg" alt=""></a>
+                        <p>那些年我们一起旅行过的地方</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/best1.jpg" alt=""></a>
+                        <p>那些年我们一起旅行过的地方</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/upload/best1.jpg" alt=""></a>
+                        <p>那些年我们一起旅行过的地方</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="toptwo">
+                <div class="title">
+                    <h3>最新发布</h3>
+                </div>
+                <ul>
+                    <li>
+                        <img src="images/upload/new1.jpg" alt="">
+                        <div class="info">
+                            <h4>那些年，我们一起旅行过的地方</h4>
+                            <p class="p1">评论:35  热度:5612  时间:2017/11/12</p>
+                            <p>我想要一次旅行，到处留下痕迹,和你一起。我在别人眼里，你在我心里。我想要一次旅行，不留任何足迹，独自一起。我在你的记忆里，却不在你心里。我们一起走过过去和现在。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/upload/new2.jpg" alt="">
+                        <div class="info">
+                            <h4>那些年，我们一起旅行过的地方</h4>
+                            <p class="p1">评论:35  热度:5612  时间:2017/11/12</p>
+                            <p>我想要一次旅行，到处留下痕迹,和你一起。我在别人眼里，你在我心里。我想要一次旅行，不留任何足迹，独自一起。我在你的记忆里，却不在你心里。我们一起走过过去和现在。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/upload/new3.jpg" alt="">
+                        <div class="info">
+                            <h4>那些年，我们一起旅行过的地方</h4>
+                            <p class="p1">评论:35  热度:5612  时间:2017/11/12</p>
+                            <p>我想要一次旅行，到处留下痕迹,和你一起。我在别人眼里，你在我心里。我想要一次旅行，不留任何足迹，独自一起。我在你的记忆里，却不在你心里。我们一起走过过去和现在。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/upload/new4.jpg" alt="">
+                        <div class="info">
+                            <h4>那些年，我们一起旅行过的地方</h4>
+                            <p class="p1">评论:35  热度:5612  时间:2017/11/12</p>
+                            <p>我想要一次旅行，到处留下痕迹,和你一起。我在别人眼里，你在我心里。我想要一次旅行，不留任何足迹，独自一起。我在你的记忆里，却不在你心里。我们一起走过过去和现在。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/upload/new5.jpg" alt="">
+                        <div class="info">
+                            <h4>那些年，我们一起旅行过的地方</h4>
+                            <p class="p1">评论:35  热度:5612  时间:2017/11/12</p>
+                            <p>我想要一次旅行，到处留下痕迹,和你一起。我在别人眼里，你在我心里。我想要一次旅行，不留任何足迹，独自一起。我在你的记忆里，却不在你心里。我们一起走过过去和现在。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="pages">
+                <li><a href="###">首页</a></li>
+                <li><a href="###">上一页</a></li>
+                <li><a href="###">3</a></li>
+                <li><a href="###">4</a></li>
+                <li><a href="###">5</a></li>
+                <li><a href="###">6</a></li>
+                <li><a href="###">7</a></li>
+                <li><a href="###">8</a></li>
+                <li><a href="###">9</a></li>
+                <li><a href="###">10</a></li>
+                <li><a href="###">11</a></li>
+                <li><a href="###">12</a></li>
+                <li><a href="###">下一页</a></li>
+                <li><a href="###">尾页</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul class="thirds">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="articles">
+                <div class="title">
+                    <h4>收藏推荐</h4>
+                </div>
+                <ul class="Alist">
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                </ul>
+            </div>
+            <div class="articles">
+                <div class="title">
+                    <h4>收藏推荐</h4>
+                </div>
+                <ul class="Alist">
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                </ul>
+            </div>
+            <div class="articles">
+                <div class="title">
+                    <h4>收藏推荐</h4>
+                </div>
+                <ul class="Alist">
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                    <li>那些年，我们一起旅行过的地方</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+	<footer>
+		<span>版权所有©爱旅行</span>
+	</footer>
+	<div class="flo">
+		<div id="up">
+			<span class="fa fa-angle-up"></span>
+			<p>返还顶部</p>
+		</div>
+		<div id="propose">
+			<span class="fa fa-comment-o"></span>
+			<p>意见反馈</p>
+		</div>
+	</div>
+	<div id="chat">
+		<textarea name="" rows="10" cols="" placeholder="请输入您对该网站的建议"></textarea>
+		<button>提交</button>
+		<button>关闭</button>
+	</div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+       	
+    </script>
+</body>
+</html>

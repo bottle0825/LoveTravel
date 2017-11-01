@@ -55,3 +55,6 @@
 .tips:hover{
 	background: #007AFF;
 }
+li{
+	cursor: pointer;
+}
